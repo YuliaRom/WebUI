@@ -1,13 +1,12 @@
 package org.example;
 
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTest
 {
     /**
      * Rigorous Test :-)
@@ -15,6 +14,14 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        System.out.println("я тест 1");
+    }
+
+    @Test
+    public void shouldAnswerWithTrue1()
+    {
+        System.out.println("я тест 2");
     }
 }
+
+
