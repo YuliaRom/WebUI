@@ -1,10 +1,7 @@
 package org.example.lesson5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -56,11 +53,12 @@ public class MailRuTestsWithAssertions {
         driver.findElement(By.xpath("//*[@href=\"/compose/\"]")).click();
         //Thread.sleep(1000);
         driver.findElement(By.xpath("//span/span/span[contains(.,'Сохранить')]")).click();
-        //Thread.sleep(1000);
+        Thread.sleep(1000);
 
         WebElement mainPage = driver.findElement(By.xpath("//span[contains(@class,'notify__Посмотреть')]"));
         assertThat(mainPage, isDisplayed());
     }
+
 
     @Test
     void deleteDraftTest() throws InterruptedException {
@@ -81,7 +79,7 @@ public class MailRuTestsWithAssertions {
     }
 
     //В корзине должны быть письма, иначе тест будет не пройден
-    @Test
+        @Test
     void removeFromCartTest() {
         Actions actions = new Actions(driver);
         driver.findElement(By.xpath("//a[contains(.,'Корзина')]")).click();
